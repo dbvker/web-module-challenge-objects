@@ -36,6 +36,9 @@ Test your createMenuItems function by doing the following:
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
 
+console.log(createMenuItem("pizza", 5, "lunch"));
+console.log(createMenuItem("pasta", 6, "dinner"));
+console.log(createMenuItem("eggs", 6.5, "breakfast"));
 
 
 
@@ -166,9 +169,9 @@ function getLastReview(array) {
   const number = array.length - 1;
 
   return `${array[number].name} gave the restaurant a ${array[number].rating} star review, and their feedback was: ${array[number].feedback}`;
-} 
+}
 
-console.log(getLastReview(reviews));
+console.log('Task 7:', getLastReview(reviews));
 
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
@@ -182,14 +185,25 @@ Use the getReviewsByRating function below to do the following:
   For example: getReviewByRating(reviews, 4) would return these reviews in the 4 range (4-4.9):
   [
     {name: "Miranda", rating: 4, feedback:"fun trivia and cool vibes"},
-    {name: "Wen", rating: 4.5, feedback:"I don't leave my house often, but when I do, it's for this place. Highly reccomend."},
+    {name: "Wen", rating: 4.5, feedback:"I don't leave my house often, but when I do, it's for this place. Highly recommend."},
     {name:"Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."}
   ]
 */
 
- function getReviewByRating(/* code here */) {
+ function getReviewByRating(array, rating) {
     /* code here */
+
+    
+    const byRating = [];
+    for (let i = 0; i < array.length; i++) {
+      if (Math.floor(array[i].rating) === Math.floor(rating)) {
+        byRating.push(array[i]);
+      }
+    }
+    return byRating
   }
+
+  console.log('Stretch 1:', getReviewByRating(reviews, 4.9));
 
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
